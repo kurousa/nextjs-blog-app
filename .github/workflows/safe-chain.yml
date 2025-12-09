@@ -1,0 +1,40 @@
+name: Scan with Safe-Chain
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    # ワークフロー全体での権限設定（最小権限の原則）
+    permissions:
+      contents: read # コードの読み取りのみ許可
+
+    steps:
+      # 1. コードのチェックアウト
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Node.js環境のセットアップ
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22' # 任意の安定バージョンを指定
+
+      # 3. safe-chainのインストール
+      - name: Install safe-chain
+        run: curl -fsSL https://raw.githubusercontent.com/AikidoSec/safe-chain/main/install-scripts/install-safe-chain.sh | sh -s -- --ci
+        
+      # 4. 依存関係のインストール
+      - name: Install dependencies securely
+        run: npm ci
+
+      # 6. テストステップ（オプション）
+      - name: Run tests
+        run: npm test
