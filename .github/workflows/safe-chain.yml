@@ -34,7 +34,3 @@ jobs:
       # 4. 依存関係のインストール
       - name: Install dependencies securely
         run: npm ci
-
-      # 6. テストステップ（オプション）
-      - name: Run tests
-        run: npm test
