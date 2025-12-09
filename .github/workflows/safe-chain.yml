@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  safe-chain:
     runs-on: ubuntu-latest
     
     # ワークフロー全体での権限設定（最小権限の原則）
