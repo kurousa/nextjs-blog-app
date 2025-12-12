@@ -8,7 +8,7 @@
 ## 技術スタック
 
 - React v19.2.1
-- Next.js(AppRouter) v16.0.8 /w ReactCompiler
+- Next.js(AppRouter) v16.0.10 /w ReactCompiler
 - TypeScript v5
 - Tailwind CSS v4
 - Node.js v22
