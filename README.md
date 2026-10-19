@@ -3,7 +3,7 @@
 ## 概要
 
 - ローカルマークダウンファイル読み込みに対応した記事一覧、記事詳細ページの表示ができます。
-  - マークダウンファイルパーサーとして、gray-matter, remark, remark-htmlを利用しています。
+  - マークダウンファイルパーサーとして、@11ty/gray-matter, remark, remark-htmlを利用しています。
 
 ## 技術スタック
 
@@ -13,7 +13,7 @@
 - Tailwind CSS v4
 - Node.js v22
 - Markdown
-  - gray-matter
+  - @11ty/gray-matter
   - remark
   - remark-html
 - Biome(Linter/Formatter) v2.2.0
