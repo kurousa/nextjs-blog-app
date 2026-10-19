@@ -1,5 +1,5 @@
+import matter from "@11ty/gray-matter";
 import fs from "fs";
-import matter from "gray-matter";
 import path from "path";
 import { remark } from "remark";
 import html from "remark-html";
@@ -71,5 +71,4 @@ export function getAllPostIds(): { id: string }[] {
       id: fileName.substring(0, fileName.lastIndexOf(".")),
     };
   });
-
 }
